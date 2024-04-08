@@ -26,9 +26,30 @@ Este método da classe `Trabalho` verifica se uma string é um palíndromo.
 
 Este método da classe `Trabalho` substitui todas as ocorrências de uma substring por outra substring em uma string.
 
-## 7. getFatorial
+## 7. encontrarCaminho
 
-Este método da classe `Trabalho` calcula o fatorial de um número inteiro.
+Este método da classe `Trabalho` verifica se é possível encontrar um caminho em um labirinto. Dado uma posição inicial no labirinto, o objetivo é andar através dos caminhos abertos (caminhos com 1) até chegar no item 2 (saída). É permitido andar apenas para cima, baixo, direita e esquerda. Não é possível andar em diagonais. 
+
+Ex.: Para o labirinto abaixo,
+```
+int[][] labirinto = {
+    {1, 0, 1, 1, 1},
+    {1, 1, 1, 0, 1},
+    {0, 0, 0, 1, 1},
+    {1, 1, 1, 1, 0},
+    {1, 1, 1, 1, 2}
+};
+```
+A resposta seria:
+```
+int[][] labirinto = {
+    {x, 0, x, x, x},
+    {x, x, x, 0, x},
+    {0, 0, 0, x, x},
+    {1, 1, 1, x, 0},
+    {1, 1, 1, x, x}
+};
+```
 
 ## 8. getNumeroPalavrasArquivo
 
