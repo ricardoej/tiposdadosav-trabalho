@@ -97,23 +97,31 @@ public class TrabalhoTest {
     }
 	
 	@Test
-    public void getFatorial() {
+    public void encontrarCaminho() {
 		
 		Trabalho trabalho = new Trabalho();
 		
-		int resposta0 = trabalho.getFatorial(0);
-		int resposta1 = trabalho.getFatorial(1);
-		int resposta2 = trabalho.getFatorial(2);
-		int resposta3 = trabalho.getFatorial(3);
-		int resposta4 = trabalho.getFatorial(4);
-		int resposta5 = trabalho.getFatorial(5);
-		
-        assertEquals(1, resposta0);
-        assertEquals(1, resposta1);
-        assertEquals(2, resposta2);
-        assertEquals(6, resposta3);
-        assertEquals(24, resposta4);
-        assertEquals(120, resposta5);
+        int[][] labirintoComCaminho = {
+            {1, 0, 1, 1, 1},
+            {1, 1, 1, 0, 1},
+            {0, 0, 0, 1, 1},
+            {1, 1, 1, 1, 0},
+            {1, 1, 1, 1, 2}
+        };
+        
+        int[][] labirintoSemCaminho = {
+            {1, 0, 1, 1, 1},
+            {1, 1, 1, 0, 1},
+            {0, 0, 0, 1, 1},
+            {1, 1, 0, 0, 0},
+            {1, 1, 1, 1, 2}
+        };
+        
+        boolean existeCaminho = trabalho.encontrarCaminho(labirintoComCaminho, 0, 0);
+        boolean naoExisteCaminho = trabalho.encontrarCaminho(labirintoSemCaminho, 0, 0);
+
+        assertTrue(existeCaminho); // Labirinto solucionável
+        assertFalse(naoExisteCaminho); // Labirinto não solucionável
     }
 	
 	@Test
